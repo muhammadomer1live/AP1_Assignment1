@@ -3,9 +3,11 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Function to read data from a CSV file
-# This function reads the data from the CSV file and returns a Pandas DataFrame.
 
+"""
+Function to read data from a CSV file
+# This function reads the data from the CSV file and returns a Pandas DataFrame.
+"""
 def read_data(filename):
   """Reads data from a CSV file and returns a Pandas DataFrame.
   Args:
@@ -24,7 +26,8 @@ def map_line_plot(data, x_col, y_cols, labels, title, x_label, y_label):
     for i, col in enumerate(y_cols):
         ax.plot(data[x_col], data[col], label=labels[i])
         
-    # Set the title, x-axis label, and y-axis label
+    """Set the title, x-axis label, and y-axis label
+    """
     ax.set_title(title)
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
@@ -35,10 +38,12 @@ def map_line_plot(data, x_col, y_cols, labels, title, x_label, y_label):
     # Save the figure
     plt.savefig('lineplot_fig.png', dpi=300)
         
-    # Show the plot
+    """Show the plot
+    """
     plt.show()
 
-# Define a function to plot a bar plot
+"""Define a function to plot a bar plot
+"""
 def map_bar_plot(data, x_col, y_col, title, x_label, y_label):
     fig, ax = plt.subplots()
 
@@ -49,19 +54,22 @@ def map_bar_plot(data, x_col, y_col, title, x_label, y_label):
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
     
-    # Save the figure
+    """Save the figure
+    """
     plt.savefig('barplot_fig.png', dpi=300)
         
     # Show the plot
     plt.show()
 
-# Define a function to plot a Scatter plot
+"""Define a function to plot a Scatter plot
+"""
 def map_scatter_plot(data, x_col, y_col, title, xlabel, ylabel, marker, color):
 
     fig, ax = plt.subplots()
     ax.scatter(data[x_col], data[y_col], marker=marker, color=color)
         
-    # Set the title, x-axis label, and y-axis label    
+    """Set the title, x-axis label, and y-axis label
+    """
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.set_title(title)
@@ -69,7 +77,8 @@ def map_scatter_plot(data, x_col, y_col, title, xlabel, ylabel, marker, color):
     # Save the figure
     plt.savefig('scatterplot_fig.png', dpi=300)
             
-    # Show the plot
+    """Show the plot
+    """
     plt.show()  
 
 # Read the data
@@ -78,7 +87,8 @@ data_os = read_data("os_share_2023.csv")
 data_income = read_data("adult_income.csv")
 
 
-# Plot a line plot showing multiple lines with proper labels and legend
+"""Plot a line plot showing multiple lines with proper labels and legend
+"""
 
 map_line_plot(
     data=data_crime,
@@ -90,8 +100,8 @@ map_line_plot(
     y_label="Amount in Hundred Thousand",
 )
 
-# Plot a bar plot showing the Market Share for Windows in 2023
-
+"""Plot a bar plot showing the Market Share for Windows in 2023
+"""
 map_bar_plot(
     data=data_os,
     x_col="Month",
@@ -102,7 +112,8 @@ map_bar_plot(
 )
 
 
-# Plot a Scatter plot showing the Relationship between hours work to age
+"""Plot a Scatter plot showing the Relationship between hours work to age
+"""
 map_scatter_plot(
     data=data_income, 
     x_col='age', 
@@ -114,15 +125,13 @@ map_scatter_plot(
     color='blue'
 )
 
-# Summary
+"""Summary
 
-#The three visualization methods used in this code are:
+The three visualization methods used in this code are:
 
-#* Line plot: To show how multiple variables change over time.
-#* Bar plot: To compare the values of a variable across different categories.
-#* Pie chart: To show the distribution of a variable.
-
-"""
+* Line plot: To show how multiple variables change over time.
+* Bar plot: To compare the values of a variable across different categories.
+* Pie chart: To show the distribution of a variable.
 
 Data References
 
